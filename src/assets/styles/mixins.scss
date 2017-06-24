@@ -1,0 +1,158 @@
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin rotate($value: 0) {
+  /* Safari 4+ */
+  -webkit-transform: rotate($value);
+  /* Fx 5+ */
+  -moz-transform: rotate($value);
+  /* IE 10+, Fx 29+ */
+  -ms-transform: rotate($value);
+  /* Opera 12+ */
+  -o-transform: rotate($value);
+  /* normal */
+  transform: rotate($value);
+}
+
+@mixin transition($property: all, $time: .6s, $timingFunc: ease) {
+  /* Safari 4+ ,chrome*/
+  -webkit-transition:: $property $time $timingFunc;
+  /* Fx 5+ */
+  -moz-transition:: $property $time $timingFunc;
+  /* IE 10+, Fx 29+ */
+  -ms-transition:: $property $time $timingFunc;
+  /* Opera 12+ */
+  -o-transition:: $property $time $timingFunc;
+  /* normal */
+  transition:: $property $time $timingFunc;
+}
+
+@mixin translate($x: 0,$y:0) {
+  /* Safari 4+ */
+  -webkit-transform: translate($x, $y);
+  /* Fx 5+ */
+  -moz-transform: translate($x, $y);
+  /* IE 10+, Fx 29+ */
+  -ms-transform: translate($x, $y);
+  /* Opera 12+ */
+  -o-transform: translate($x, $y);
+  /* normal */
+  transform: translate($x, $y);
+}
+
+@mixin border-radius($radius: 4px) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+@mixin clearfix() {
+  &:after,
+  &:before {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+/*TRUNCATE TEXT*/
+@mixin truncateText($overflow: ellipsis) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: $overflow; // values are: clip, ellipsis, or a string
+}
+
+
+//SCROLLBAR
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white, 50%)) {
+  ::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: $foreground-color;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+
+  // For Internet Explorer
+  body {
+    scrollbar-face-color: $foreground-color;
+    scrollbar-track-color: $background-color;
+  }
+}
+
+@mixin keyframe($animation_name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($delay, $duration, $animation, $transition, $iteration) {
+  -webkit-animation-delay: $delay;
+  -webkit-animation-duration: $duration;
+  -webkit-animation-name: $animation;
+  -webkit-animation-timing-function: $transition;
+  -webkit-animation-iteration-count: $iteration;
+  -webkit-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  -moz-animation-delay: $delay;
+  -moz-animation-duration: $duration;
+  -moz-animation-name: $animation;
+  -moz-animation-timing-function: $transition;
+  -moz-animation-iteration-count: $iteration;
+  -moz-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  -o-animation-delay: $delay;
+  -o-animation-duration: $duration;
+  -o-animation-name: $animation;
+  -o-animation-timing-function: $transition;
+  -o-animation-iteration-count: $iteration;
+  -o-animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $animation;
+  animation-timing-function: $transition;
+  animation-iteration-count: $iteration;
+  animation-fill-mode: forwards; /* this prevents the animation from restarting! */
+}
+
+@mixin placeholderColor($color:$grey-material-500) {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $color;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $color;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $color;
+  }
+}

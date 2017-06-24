@@ -1,0 +1,82 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style : normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style : normal;
+}
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style : normal;
+}
+/*Italic*/
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style : italic;
+}
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style : italic;
+}
+@font-face {
+    font-family: Open-Sans;
+    src        : url('./assets/fonts/OpenSans-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style : italic;
+}
+
+/************** RESETS *****************/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+h1 img {
+  display: block;
+}
+
+img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nf {
+  clear: both;
+}
+
+.clearfix {
+  clear: both;
+}
+
+button, textarea, input {
+  outline: none;
+  border: none;
+}
+
+html, body {
+  height: 100%;
+}

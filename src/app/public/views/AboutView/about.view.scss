@@ -1,0 +1,43 @@
+.Wrapper {
+  padding: 20px 0;
+
+  .margin {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+  }
+
+  .About__mission {
+    text-align: center;
+    padding: 30px 0 40px;
+    border-bottom: 1px solid rgb(220,220,220);
+
+    .Mission__image {
+      margin-bottom: 30px;
+      img {
+        width: 80px;
+      }
+    }
+
+    .Mission__text {
+      width: 70%;
+      margin: 0 auto;
+      p {
+        font-family: Open-Sans;
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(70,70,70);
+      }
+    }
+  }
+  .About__terms {
+    padding: 50px 0;
+    p {
+      font-family: Open-Sans;
+      font-size: 16px;
+      font-weight: 100;
+      color: rgb(100,100,100);
+      margin-bottom: 20px;
+    }
+  }
+}
