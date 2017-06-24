@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MdButtonModule } from '@angular/material';
+import { MaterialModule, MdButtonModule } from '@angular/material';
+// Modules app
+import { ComplaintModule } from '../complaint/complaint.module';
 
+// Routing
 import { PublicRoutingModule }  from './routing/public-routing.module';
 
 // Views
@@ -13,6 +16,8 @@ import { AboutView } from './views/AboutView/about.view';
 // Components
 import { HeaderComponent } from './components/HeaderComponent/header.component';
 import { FooterComponent } from './components/FooterComponent/footer.component';
+import { LoginComponent } from './components/LoginComponent/login.component';
+import { RegisterComponent } from './components/RegisterComponent/register.component';
 
 @NgModule({
   declarations: [
@@ -20,13 +25,17 @@ import { FooterComponent } from './components/FooterComponent/footer.component';
     HomeView,
     AboutView,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
+    MdButtonModule,
     PublicRoutingModule,
-    MdButtonModule
+    ComplaintModule
   ],
   providers: [],
   bootstrap: [LayoutView]

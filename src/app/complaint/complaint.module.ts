@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule, MdButtonModule } from '@angular/material';
 
 import { ComplaintRoutingModule }  from './routing/complaint-routing.module';
 
@@ -14,6 +16,9 @@ import { ComplaintsView } from './views/ComplaintsView/complaints.view';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    MdButtonModule,
     ComplaintRoutingModule
   ],
   providers: [],

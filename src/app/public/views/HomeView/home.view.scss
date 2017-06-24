@@ -1,4 +1,4 @@
-@import "../../styles/index.scss";
+@import "../../../styles/index.scss";
 
 .Wrapper {
   position: fixed;
@@ -34,6 +34,7 @@
     .Content__form {
       .Form__login,
       .Form__register {
+        display: block;
         max-width: 300px;
       }
 
@@ -59,84 +60,6 @@
           color: white;
         }
       }
-    }
-  }
-}
-
-.Form__register {
-  background-color: white;
-  padding: 15px;
-
-  h3 {
-    font-family: Open-Sans;
-    font-size: 14px;
-    font-weight: 600;
-    color: rgb(70,70,70);
-    text-transform: uppercase;
-    margin-bottom: 10px;
-  }
-
-  .Register__inputs {
-    margin-bottom: 10px;
-
-    input {
-      width: 100%;
-      border: 1px solid rgb(220,220,220);
-      height: 35px;
-      padding: 0 10px;
-      border-radius: 1px;
-      font-family: Open-Sans;
-      font-size: 12px;
-      color: rgb(70,70,70);
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  .Register__foot {
-    text-align: right;
-  }
-}
-
-.Form__login {
-  background-color: white;
-  padding: 15px;
-
-  .Login__inputs {
-    margin-bottom: 10px;
-
-    input {
-      width: 100%;
-      border: 1px solid rgb(220,220,220);
-      height: 35px;
-      padding: 0 10px;
-      border-radius: 1px;
-      font-family: Open-Sans;
-      font-size: 12px;
-      color: rgb(70,70,70);
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
-  .Login__foot {
-    a {
-      float: left;
-      font-family: Open-Sans;
-      font-size: 12px;
-      font-weight: 600;
-      color: rgb(70,70,70);
-      margin-top: 10px;
-    }
-
-    button {
-      float: right;
     }
   }
 }

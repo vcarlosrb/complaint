@@ -9,29 +9,8 @@
           </div>
         </div>
         <div class="Content__form">
-          <div class="Form__login">
-            <div class="Login__inputs">
-              <input type="text" name="email" placeholder="Email">
-              <input type="password" name="password" placeholder="Password">
-            </div>
-            <div class="Login__foot">
-              <a href="">Recuperar contraseña</a>
-              <button md-raised-button class="button__green">Ingresar</button>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="Form__register">
-            <h3>Registro</h3>
-            <div class="Register__inputs">
-              <input type="text" name="firstName" placeholder="Nombres">
-              <input type="text" name="lastName" placeholder="Apellidos">
-              <input type="text" name="email" placeholder="Email">
-              <input type="password" name="password" placeholder="Password">
-            </div>
-            <div class="Register__foot">
-              <button md-raised-button class="button__green">Registrarse</button>
-            </div>
-          </div>
+          <login-component class="Form__login"></login-component>
+          <register-component class="Form__register"></register-component>
         </div>
         <div class="clearfix"></div>
       </div>
