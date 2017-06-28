@@ -43,9 +43,15 @@
         width: 23px;
       }
     }
-  }
 
-  .Header__about {
-    padding: 12.5px 15px !important;
+    .Header__about {
+      md-icon {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 16px;
+        color: rgb(120,120,120);
+      }
+      padding: 12.5px 15px !important;
+    }
   }
 }

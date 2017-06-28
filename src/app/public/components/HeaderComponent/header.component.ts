@@ -1,27 +1,28 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { UserService } from '../../services/UserService/user.service';
-import { MessageService } from '../../services/UserService/message.service';
 
 @Component({
   selector: 'header-component',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  providers: [UserService, MessageService]
+  providers: [UserService]
 })
 
-export class HeaderComponent {
-  message: any;
+export class HeaderComponent implements OnInit {
+  session: boolean;
   subscription: Subscription;
   constructor(
-    private userService: UserService,
-    private messageService: MessageService,
+    private userService: UserService
   ) {
-    this.subscription = this.messageService.getMessage().subscribe((message) => {
-      this.message = message;
-      console.log(message, 'dddd')
-    }, (err) => {
-      console.log(err, 'error');
+    this.session = false;
+  }
+  ngOnInit() {
+    if (localStorage.getItem('userId')) {
+      this.session = true;
+    }
+    UserService.initSession('session').subscribe((value) => {
+      this.session = value;
     });
   }
 }

@@ -8,4 +8,4 @@ import { HeaderComponent } from '../../components/HeaderComponent/header.compone
   providers: []
 })
 
-export class HomeView { }
+export class HomeView {}
