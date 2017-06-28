@@ -1,144 +1,15 @@
 <div class="Wrapper">
   <div class="margin">
     <div class="Complaints__panel">
-      <div class="User__info">
-        <div class="User__image" style="background-image: url(/assets/images/person.jpg)"></div>
-        <div class="User__data">
-          <h3>Carlos Roca Bejar</h3>
-          <span>carlos@gmail.com</span>
-        </div>
-      </div>
-      <div class="Companies__content">
-        <div class="Conpanies__filter">
-          <input type="text" name="filter" placeholder="Buscar empresa">
-        </div>
-        <div class="Companies__list">
-          <div class="Company__item">
-            <p>Movistar</p>
-            <span>1250</span>
-          </div>
-          <div class="Company__item">
-            <p>Metro</p>
-            <span>1119</span>
-          </div>
-          <div class="Company__item">
-            <p>Claro</p>
-            <span>1046</span>
-          </div>
-          <div class="Company__item">
-            <p>KFC</p>
-            <span>785</span>
-          </div>
-        </div>
-      </div>
+      <user-component class="User__info"></user-component>
+      <companies-component></companies-component>
     </div>
     <div class="Complaints__wall">
-      <div class="Complaint__publish">
-        <div class="Publish__top">
-          <div class="Top__user" style="background-image: url(/assets/images/person.jpg)"></div>
-          <div class="Top__company">
-            <input type="text" name="company" placeholder="Nombre de la empresa" id="company">
-            <label for="company">Empresa</label>
-          </div>
-        </div>
-        <div class="Publish__textarea">
-          <textarea name="complaint" placeholder="Escrine tu queja..."></textarea>
-        </div>
-        <div class="Publish__foot">
-          <div class="Foot__tools">
-            <div class="Tool__item">
-              <md-icon>camera_alt</md-icon>
-              <span>Foto</span>
-            </div>
-          </div>
-          <div class="Foot__button">
-            <button md-raised-button class="button__green">Publicar</button>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
+      <publish-component class="Complaint__publish"></publish-component>
       <div class="Complaints__list">
-        <div class="Complaint__item">
-          <div class="User__data">
-            <div class="User__photo" style="background-image: url(/assets/images/person.jpg)"></div>
-            <div class="User__text">
-              <h3>Jose Acosta Rojas</h3>
-              <p>13 de junio, 2017</p>
-            </div>
-          </div>
-          <div class="Content__statement">
-            <div class="Statement__text">
-              <p>Donec vel consectetur justo, rhoncus feugiat risus. Vestibulum vehicula eros eu nunc consectetur, ut posuere purus volutpat. Praesent ut auctor sem, ac cursus sem. Proin auctor, arcu sit amet aliquet viverra, quam neque maximus lacus, id
-                gravida magna massa vel purus.</p>
-            </div>
-          </div>
-          <div class="Options__content">
-            <ul class="Options__list">
-              <li>
-                <md-icon>thumb_up</md-icon>
-                <span>7</span>
-              </li>
-              <li>
-                <md-icon>comment</md-icon>
-                <span>5</span>
-              </li>
-            </ul>
-          </div>
-          <div class="Tools__content">
-            <ul class="Tools__list">
-              <li>
-                <md-icon>thumb_up</md-icon>
-                <span>Me gusta</span>
-              </li>
-              <li>
-                <md-icon>comment</md-icon>
-                <span>Comentar</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="Complaint__item">
-          <div class="User__data">
-            <div class="User__photo" style="background-image: url(/assets/images/person.jpg)"></div>
-            <div class="User__text">
-              <h3>Jose Acosta Rojas</h3>
-              <p>13 de junio, 2017</p>
-            </div>
-          </div>
-          <div class="Content__statement">
-            <div class="Statement__text">
-              <p>Donec vel consectetur justo, rhoncus feugiat risus. Vestibulum vehicula eros eu nunc consectetur, ut posuere purus volutpat. Praesent ut auctor sem, ac cursus sem. Proin auctor, arcu sit amet aliquet viverra, quam neque maximus lacus, id
-                gravida magna massa vel purus.</p>
-            </div>
-            <div class="Statement__image">
-              <img src="/assets/images/movistar.jpg" alt="">
-            </div>
-          </div>
-          <div class="Options__content">
-            <ul class="Options__list">
-              <li>
-                <md-icon>thumb_up</md-icon>
-                <span>7</span>
-              </li>
-              <li>
-                <md-icon>comment</md-icon>
-                <span>5</span>
-              </li>
-            </ul>
-          </div>
-          <div class="Tools__content">
-            <ul class="Tools__list">
-              <li>
-                <md-icon>thumb_up</md-icon>
-                <span>Me gusta</span>
-              </li>
-              <li>
-                <md-icon>comment</md-icon>
-                <span>Comentar</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item"></publish-item-component>
       </div>
     </div>
   </div>

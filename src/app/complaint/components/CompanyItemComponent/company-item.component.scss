@@ -1,0 +1,28 @@
+.Company__item {
+  padding: 5px 10px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(245,245,245);
+  }
+
+  p,
+  span {
+    font-family: Open-Sans;
+  }
+
+  p {
+    float: left;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgb(70,70,70);
+  }
+
+  span {
+    float: right;
+    font-weight: 100;
+    font-size: 12px;
+    color: rgb(120,120,120);
+  }
+}

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule }    from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule, MdButtonModule } from '@angular/material';
 // Modules app
@@ -31,6 +32,7 @@ import { RegisterComponent } from './components/RegisterComponent/register.compo
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     BrowserAnimationsModule,
     MaterialModule,
     MdButtonModule,
