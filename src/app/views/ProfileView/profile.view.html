@@ -1,0 +1,17 @@
+<div class=Profile>
+  <div class=Profile__margin>
+    <div class=Profile__user *ngIf="user">
+      <div class=User__image style="background-image: url(/assets/images/person.jpg)"></div>
+      <p>{{user.firstName}} {{user.lastName}}</p>
+      <span>{{user.email}}</span>
+    </div>
+    <div class=Profile__publish>
+      <h3 class=Publish__title *ngIf="user">Quejas de {{user.firstName}}</h3>
+      <div class=Publish__list>
+        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item"></publish-item-component>
+      </div>
+    </div>
+  </div>
+</div>

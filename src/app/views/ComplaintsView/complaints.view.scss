@@ -1,0 +1,40 @@
+@import "../../styles/index.scss";
+
+.Wrapper {
+  background-color: $gray;
+  padding: 20px 0;
+
+  .margin {
+    width: 1000px;
+    margin: 0 auto;
+  }
+
+  .Complaints__panel {
+    float: left;
+    width: 230px;
+
+    .User__info {
+      margin-bottom: 15px;
+      display: block;
+    }
+  }
+
+  .Complaints__wall {
+    margin-left: 250px;
+
+    .Complaint__publish {
+      margin-bottom: 15px;
+    }
+
+    .Complaints__list {
+      .Complaint__item {
+        display: block;
+        margin-bottom: 15px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

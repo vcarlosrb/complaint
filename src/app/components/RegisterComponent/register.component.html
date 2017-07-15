@@ -1,0 +1,12 @@
+<div class="Register">
+  <h3>Registro</h3>
+  <div class="Register__inputs">
+    <input type="text" name="firstName" placeholder="Nombres" #firstName [ngClass]="{true: 'validInput'}[valid.firstName]">
+    <input type="text" name="lastName" placeholder="Apellidos" #lastName [ngClass]="{true: 'validInput'}[valid.lastName]">
+    <input type="text" name="email" placeholder="Email" #email [ngClass]="{true: 'validInput'}[valid.email]">
+    <input type="password" name="password" placeholder="Password" #password [ngClass]="{true: 'validInput'}[valid.password]">
+  </div>
+  <div class="Register__foot">
+    <button md-raised-button class="button__green" (click)="register(firstName.value, lastName.value, email.value, password.value)">Registrarse</button>
+  </div>
+</div>
