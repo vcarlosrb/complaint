@@ -1,8 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule, MdButtonModule } from '@angular/material';
+import { MomentModule } from 'angular2-moment';
+import { FilterCompanyPipe } from './common/filter-company.pipe';
 
 // Services
 import { AuthGuardService } from './services/AuthService/auth-guard.service';
@@ -20,6 +23,7 @@ import { HomeView } from './views/HomeView/home.view';
 import { AboutView } from './views/AboutView/about.view';
 import { ComplaintsView } from './views/ComplaintsView/complaints.view';
 import { ProfileView } from './views/ProfileView/profile.view';
+import { CompanyView } from './views/CompanyView/company.view';
 
 // Components
 import { HeaderComponent } from './components/HeaderComponent/header.component';
@@ -35,12 +39,14 @@ import { UserComponent } from './components/UserComponent/user.component';
 
 @NgModule({
   declarations: [
+    FilterCompanyPipe,
     LayoutView,
     PrivateView,
     HomeView,
     AboutView,
     ComplaintsView,
     ProfileView,
+    CompanyView,
     HeaderComponent,
     HeaderPrivateComponent,
     FooterComponent,
@@ -55,9 +61,11 @@ import { UserComponent } from './components/UserComponent/user.component';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     BrowserAnimationsModule,
     MaterialModule,
     MdButtonModule,
+    MomentModule,
     AppRoutingModule
   ],
   providers: [AuthGuardService, UserService, CurrentUserResolve, CompanyService],

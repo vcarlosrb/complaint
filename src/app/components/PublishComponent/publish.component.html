@@ -2,12 +2,18 @@
   <div class="Publish__top">
     <div class="Top__user" style="background-image: url(/assets/images/person.jpg)"></div>
     <div class="Top__company">
-      <input type="text" name="company" placeholder="Nombre de la empresa" id="company">
+      <div class="Company__input">
+        <input type="text" name="company" placeholder="Nombre de la empresa" id="company" [(ngModel)]="InputCompany" (ngModelChange)="keyUp(company.value)"
+          #company [ngClass]="{true: 'validInput'}[valid.company]">
+        <div class="Option__list" [hidden]="listCompanies.length == 0">
+          <div class="Company__item" *ngFor="let company of listCompanies" (click)="selectCompany(company)">{{company.name}}</div>
+        </div>
+      </div>
       <label for="company">Empresa</label>
     </div>
   </div>
   <div class="Publish__textarea">
-    <textarea name="complaint" placeholder="Escrine tu queja..."></textarea>
+    <textarea name="complaint" placeholder="Escribe tu queja..." [ngClass]="{true: 'validInput'}[valid.statement]" #statement [(ngModel)]="InputStatement"></textarea>
   </div>
   <div class="Publish__foot">
     <div class="Foot__tools">
@@ -17,7 +23,7 @@
       </div>
     </div>
     <div class="Foot__button">
-      <button md-raised-button class="button__green">Publicar</button>
+      <button md-raised-button class="button__green" (click)="publish(currentCompany, statement.value)">Publicar</button>
     </div>
     <div class="clearfix"></div>
   </div>

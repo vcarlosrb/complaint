@@ -2,14 +2,12 @@
   <div class="margin">
     <div class="Complaints__panel">
       <user-component class="User__info" [user]="user"></user-component>
-      <companies-component [companies]="companies"></companies-component>
+      <companies-component *ngIf="companies" [companies]="companies"></companies-component>
     </div>
     <div class="Complaints__wall">
-      <publish-component class="Complaint__publish"></publish-component>
+      <publish-component class="Complaint__publish" [user]="user" [companies]="companies"></publish-component>
       <div class="Complaints__list">
-        <publish-item-component class="Complaint__item"></publish-item-component>
-        <publish-item-component class="Complaint__item"></publish-item-component>
-        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item" *ngFor="let publish of publications" [publish]="publish"></publish-item-component>
       </div>
     </div>
   </div>

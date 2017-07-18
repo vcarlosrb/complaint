@@ -1,4 +1,4 @@
-<div class="Company__item">
-  <p>{{company}}</p>
+<a [routerLink]="['/company', company.id]" class="Company__item">
+  <p>{{company.name}}</p>
   <span>{{publish}}</span>
-</div>
+</a>

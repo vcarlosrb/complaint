@@ -8,9 +8,7 @@
     <div class=Profile__publish>
       <h3 class=Publish__title *ngIf="user">Quejas de {{user.firstName}}</h3>
       <div class=Publish__list>
-        <publish-item-component class="Complaint__item"></publish-item-component>
-        <publish-item-component class="Complaint__item"></publish-item-component>
-        <publish-item-component class="Complaint__item"></publish-item-component>
+        <publish-item-component class="Complaint__item" *ngFor="let publish of publications" [publish]="publish"></publish-item-component>
       </div>
     </div>
   </div>

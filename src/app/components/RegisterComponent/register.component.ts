@@ -60,7 +60,7 @@ export class RegisterComponent {
     };
     this.userService.login(send).then((response) => {
       localStorage.setItem('userId', response.userId);
-      this.router.navigate(['/complaints']);
+      this.router.navigate(['']);
     });
   }
 }

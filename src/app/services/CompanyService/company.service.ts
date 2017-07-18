@@ -13,7 +13,31 @@ export class CompanyService {
     return Promise.reject(error.message || error);
   }
   list(): Promise<any> {
-    return this.http.get(this.BASE_API + 'companies', { headers: this.headers }).toPromise().then((res) => {
+    const URL = this.BASE_API + 'companies';
+    const options = {
+      headers: this.headers,
+      params: { filter: { include: { relation: 'publishes', scope: { fields: ['id'] } } } }
+    };
+    return this.http.get(URL, options).toPromise().then((res) => {
+      return res.json();
+    }).catch(this.handleError);
+  }
+  getById(id: string): Promise<any> {
+    const URL = this.BASE_API + 'companies/' + id;
+    const options = {
+      headers: this.headers
+    };
+    return this.http.get(URL, options).toPromise().then((res) => {
+      return res.json();
+    }).catch(this.handleError);
+  }
+  getPublishes(id: string): Promise<any> {
+    const URL = this.BASE_API + 'companies/' + id + '/publishes';
+    const options = {
+      headers: this.headers,
+      params: { filter: { include: ['user'] } }
+    };
+    return this.http.get(URL, options).toPromise().then((res) => {
       return res.json();
     }).catch(this.handleError);
   }

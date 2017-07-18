@@ -32,14 +32,13 @@ export class LoginComponent {
     return (!this.valid.email && !this.valid.password);
   }
   login(email: string, password: string): void {
-    const send = {
-      email: email,
-      password: password
-    };
     if (this.validate(email, password)) {
+      const send = {
+        email: email,
+        password: password
+      };
       this.userService.login(send).then((response) => {
         localStorage.setItem('userId', response.userId);
-        localStorage.setItem('id_token', response.id);
         this.router.navigate(['']);
       });
     }

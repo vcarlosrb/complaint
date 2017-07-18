@@ -1,0 +1,15 @@
+<div class="Company">
+  <div class="Company__margin">
+    <div class=Company__data *ngIf="company">
+      <div class=Company__image style="background-image: url(/assets/images/movistar.jpg)"></div>
+      <p>{{company.name}}</p>
+      <span>RUC: {{company.ruc || '10479191551'}}</span>
+    </div>
+    <div class=Company__publish>
+      <h3 class=Publish__title *ngIf="company">Quejas sobre {{company.name}}</h3>
+      <div class=Publish__list>
+        <publish-item-component class="Complaint__item" *ngFor="let publish of publications" [publish]="publish"></publish-item-component>
+      </div>
+    </div>
+  </div>
+</div>

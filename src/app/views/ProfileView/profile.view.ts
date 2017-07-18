@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../services/UserService/user.service';
 import { User } from '../../classes/user.class';
+import { Publish } from '../../classes/publish.class';
 
 @Component({
   selector: 'profile-view',
@@ -8,15 +10,20 @@ import { User } from '../../classes/user.class';
   styleUrls: ['./profile.view.scss'],
   providers: [UserService]
 })
-export class ProfileView {
+export class ProfileView implements OnInit {
   user: User;
+  publications: Publish;
   constructor(
-    private userService: UserService
-  ) {
-    const id = localStorage.getItem('userId');
-    this.userService.getById(id).then((response) => {
-      this.user = response;
+    private userService: UserService,
+    private router: ActivatedRoute
+  ) { }
+  ngOnInit() {
+    this.user = this.router.snapshot.data['CurrentUser'];
+    this.userService.getPublishes(this.user.id).then((response) => {
+      response.map((publish) => {
+        publish.user = this.user;
+      });
+      this.publications = response;
     });
   }
-
 }

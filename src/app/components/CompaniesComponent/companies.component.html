@@ -1,8 +1,9 @@
 <div class="Companies__content">
   <div class="Conpanies__filter">
-    <input type="text" name="filter" placeholder="Buscar empresa">
+    <input type="text" name="filter" placeholder="Buscar empresa" [(ngModel)]="searchCompany">
   </div>
   <div class="Companies__list">
-    <company-item-component *ngFor="let company of companies" company="{{company.name}}" publish="1250"></company-item-component>
+    <company-item-component *ngFor="let company of companies | filterCompany: searchCompany" [publish]="company.publishes.length"
+      [company]="company"></company-item-component>
   </div>
 </div>
