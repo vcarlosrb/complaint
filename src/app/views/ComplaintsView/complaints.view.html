@@ -5,7 +5,7 @@
       <companies-component *ngIf="companies" [companies]="companies"></companies-component>
     </div>
     <div class="Complaints__wall">
-      <publish-component class="Complaint__publish" [user]="user" [companies]="companies"></publish-component>
+      <publish-component class="Complaint__publish" [user]="user" [companies]="companies" (publish)="newPublish($event)"></publish-component>
       <div class="Complaints__list">
         <publish-item-component class="Complaint__item" *ngFor="let publish of publications" [publish]="publish"></publish-item-component>
       </div>

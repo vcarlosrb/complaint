@@ -35,7 +35,7 @@ export class CompanyService {
     const URL = this.BASE_API + 'companies/' + id + '/publishes';
     const options = {
       headers: this.headers,
-      params: { filter: { include: ['user'] } }
+      params: { filter: { include: ['user', 'comments'] } }
     };
     return this.http.get(URL, options).toPromise().then((res) => {
       return res.json();

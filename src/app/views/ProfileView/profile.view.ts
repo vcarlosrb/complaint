@@ -23,7 +23,7 @@ export class ProfileView implements OnInit {
       response.map((publish) => {
         publish.user = this.user;
       });
-      this.publications = response;
+      this.publications = response.reverse();
     });
   }
 }

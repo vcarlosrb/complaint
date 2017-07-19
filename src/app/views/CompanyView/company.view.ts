@@ -26,7 +26,10 @@ export class CompanyView implements OnInit {
       response.map((publish) => {
         publish.company = this.company;
       });
-      this.publications = response;
+      this.publications = response.reverse();
     });
+  }
+  newPublish(publish: Publish): void {
+    this.publications.unshift(publish);
   }
 }

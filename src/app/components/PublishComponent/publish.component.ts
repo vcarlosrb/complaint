@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Company } from '../../classes/company.class';
 import { User } from '../../classes/user.class';
+import { Publish } from '../../classes/publish.class';
 import { UtilService } from '../../services/UtilService/util.service';
 import { PublishService } from '../../services/PublishService/publish.service';
 
@@ -12,7 +13,8 @@ import { PublishService } from '../../services/PublishService/publish.service';
 })
 export class PublishComponent {
   @Input() companies: Company[];
-  @Input() user: User[];
+  @Input() user: User;
+  @Output() publish = new EventEmitter();
   listCompanies: Company[];
   currentCompany: Company;
   InputCompany: string;
@@ -46,7 +48,7 @@ export class PublishComponent {
 
     return (!this.valid.company && !this.valid.statement);
   }
-  publish(company: Company, statement: string): void {
+  sendPublish(company: Company, statement: string): void {
     if (this.validate(company, statement)) {
       const send = {
         companyId: company.id,
@@ -54,6 +56,9 @@ export class PublishComponent {
         userId: localStorage.getItem('userId')
       };
       this.publishService.create(send).then((response) => {
+        response.user = this.user;
+        response.company = company;
+        this.publish.emit(response);
         this.currentCompany = undefined;
         this.InputCompany = '';
         this.InputStatement = '';

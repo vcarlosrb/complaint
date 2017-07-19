@@ -20,19 +20,19 @@
   </div>
   <div class="Options__content">
     <ul class="Options__list">
-      <li>
+      <li [ngClass]="{true: 'active'}[likeUser]">
         <md-icon>thumb_up</md-icon>
-        <span>7</span>
+        <span>{{publish.likes.length}}</span>
       </li>
       <li>
         <md-icon>comment</md-icon>
-        <span>5</span>
+        <span>{{publish.comments.length}}</span>
       </li>
     </ul>
   </div>
   <div class="Tools__content">
     <ul class="Tools__list">
-      <li>
+      <li (click)="like()" [ngClass]="{true: 'active'}[likeUser]">
         <md-icon>thumb_up</md-icon>
         <span>Me gusta</span>
       </li>

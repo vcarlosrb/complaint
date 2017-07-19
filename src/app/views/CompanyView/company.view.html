@@ -6,7 +6,8 @@
       <span>RUC: {{company.ruc || '10479191551'}}</span>
     </div>
     <div class=Company__publish>
-      <h3 class=Publish__title *ngIf="company">Quejas sobre {{company.name}}</h3>
+      <h3 class=Publish__title *ngIf="company">Quejas sobre {{company.name}} ({{publications.length}})</h3>
+      <publish-company-component [company]="company" [user]="user" (publish)="newPublish($event)"></publish-company-component>
       <div class=Publish__list>
         <publish-item-component class="Complaint__item" *ngFor="let publish of publications" [publish]="publish"></publish-item-component>
       </div>

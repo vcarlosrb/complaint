@@ -36,6 +36,7 @@ import { CompanyItemComponent } from './components/CompanyItemComponent/company-
 import { PublishComponent } from './components/PublishComponent/publish.component';
 import { PublishItemComponent } from './components/PublishItemComponent/publish-item.component';
 import { UserComponent } from './components/UserComponent/user.component';
+import { PublishCompanyComponent } from './components/PublishCompanyComponent/publish-company.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { UserComponent } from './components/UserComponent/user.component';
     CompanyItemComponent,
     PublishComponent,
     PublishItemComponent,
-    UserComponent
+    UserComponent,
+    PublishCompanyComponent
   ],
   imports: [
     BrowserModule,

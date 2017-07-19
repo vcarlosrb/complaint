@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { Subject } from 'rxjs/Subject';
 import { Publish } from '../../classes/publish.class';
 import { environment } from '../../../environments/environment';
 
@@ -13,14 +14,32 @@ export class PublishService {
     return Promise.reject(error.message || error);
   }
   list(): Promise<any> {
-    return this.http.get(this.BASE_API + 'publishes', { headers: this.headers, params: { filter: { include: ['user', 'company'] } } })
-      .toPromise().then((res) => {
-        return res.json();
-      }).catch(this.handleError);
+    const URL = this.BASE_API + 'publishes';
+    const options = {
+      headers: this.headers, params: { filter: { include: ['user', 'company', 'comments'] } }
+    }
+    return this.http.get(URL, options).toPromise().then((res) => {
+      return res.json();
+    }).catch(this.handleError);
   }
   create(publish: object): Promise<Publish> {
-    return this.http.post(this.BASE_API + 'publishes', JSON.stringify(publish), { headers: this.headers }).toPromise().then((res) => {
+    const URL = this.BASE_API + 'publishes';
+    const options = {
+      headers: this.headers
+    };
+    const data = JSON.stringify(publish);
+    return this.http.post(URL, data, options).toPromise().then((res) => {
       return res.json() as Publish;
+    }).catch(this.handleError);
+  }
+  like(publishId: string, userId: string): Promise<any> {
+    const URL = this.BASE_API + 'publishes/' + publishId + '/like';
+    const options = {
+      headers: this.headers
+    };
+    const data = JSON.stringify({ userId: userId });
+    return this.http.post(URL, data, options).toPromise().then((res) => {
+      return res.json() as any;
     }).catch(this.handleError);
   }
 }

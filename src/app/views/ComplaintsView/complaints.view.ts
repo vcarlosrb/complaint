@@ -30,4 +30,12 @@ export class ComplaintsView implements OnInit {
       this.publications = response.reverse();
     });
   }
+  newPublish(publish: Publish): void {
+    this.companies.map((company) => {
+      if (company.id === publish.companyId) {
+        company.publishes.push(publish);
+      }
+    });
+    this.publications.unshift(publish);
+  }
 }

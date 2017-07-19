@@ -57,7 +57,7 @@ export class UserService {
       headers: this.headers,
       params: {
         filter: {
-          include: 'company'
+          include: ['company', 'comments']
         }
       }
     };
