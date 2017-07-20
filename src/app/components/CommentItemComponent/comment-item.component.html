@@ -1,0 +1,7 @@
+<div class="Comment__item">
+  <div class="Item__user" style="background-image: url(/assets/images/person.jpg)"></div>
+  <div class="Item__content">
+    <h3 class="Content__name">{{comment.user.firstName}} {{comment.user.lastName}} <span>{{comment.createdAt | amDateFormat:'MMMM Do YYYY, h:mm a'}}</span></h3>
+    <p>{{comment.statement}}</p>
+  </div>
+</div>

@@ -37,6 +37,8 @@ import { PublishComponent } from './components/PublishComponent/publish.componen
 import { PublishItemComponent } from './components/PublishItemComponent/publish-item.component';
 import { UserComponent } from './components/UserComponent/user.component';
 import { PublishCompanyComponent } from './components/PublishCompanyComponent/publish-company.component';
+import { CommentsComponent } from './components/CommentsComponent/comments.component';
+import { CommentItemComponent } from './components/CommentItemComponent/comment-item.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { PublishCompanyComponent } from './components/PublishCompanyComponent/pu
     PublishComponent,
     PublishItemComponent,
     UserComponent,
-    PublishCompanyComponent
+    PublishCompanyComponent,
+    CommentsComponent,
+    CommentItemComponent
   ],
   imports: [
     BrowserModule,

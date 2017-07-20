@@ -3,6 +3,7 @@ import { Headers, Http, Response } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import { Subject } from 'rxjs/Subject';
 import { Publish } from '../../classes/publish.class';
+import { Comment } from '../../classes/comment.class';
 import { environment } from '../../../environments/environment';
 
 @Injectable()
@@ -19,7 +20,7 @@ export class PublishService {
       headers: this.headers, params: { filter: { include: ['user', 'company', 'comments'] } }
     }
     return this.http.get(URL, options).toPromise().then((res) => {
-      return res.json();
+      return res.json() as Publish[];
     }).catch(this.handleError);
   }
   create(publish: object): Promise<Publish> {
@@ -40,6 +41,30 @@ export class PublishService {
     const data = JSON.stringify({ userId: userId });
     return this.http.post(URL, data, options).toPromise().then((res) => {
       return res.json() as any;
+    }).catch(this.handleError);
+  }
+  comment(publishId: string, comment: object): Promise<any> {
+    const URL = this.BASE_API + 'publishes/' + publishId + '/comments';
+    const options = {
+      headers: this.headers
+    };
+    const data = JSON.stringify(comment);
+    return this.http.post(URL, data, options).toPromise().then((res) => {
+      return res.json() as Comment;
+    }).catch(this.handleError);
+  }
+  getComments(id: string): Promise<any> {
+    const URL = this.BASE_API + 'publishes/' + id + '/comments';
+    const options = {
+      headers: this.headers,
+      params: {
+        filter: {
+          include: 'user'
+        }
+      }
+    }
+    return this.http.get(URL, options).toPromise().then((res) => {
+      return res.json() as Comment[];
     }).catch(this.handleError);
   }
 }

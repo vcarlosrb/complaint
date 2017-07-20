@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Publish } from '../../classes/publish.class';
+import { User } from '../../classes/user.class';
+import { Comment } from '../../classes/comment.class';
 import { PublishService } from '../../services/PublishService/publish.service';
 
 @Component({
@@ -10,10 +12,14 @@ import { PublishService } from '../../services/PublishService/publish.service';
 })
 export class PublishItemComponent implements OnInit {
   @Input() publish: Publish;
+  @Input() user: User;
   likeUser: boolean;
+  commentActive: boolean;
+  comments: Comment[];
   constructor(
     private publishService: PublishService
   ) {
+    this.commentActive = false;
     this.likeUser = false;
   }
   ngOnInit() {
@@ -30,5 +36,13 @@ export class PublishItemComponent implements OnInit {
       this.likeUser = !this.likeUser;
       this.publish.likes = response;
     });
+  }
+  getComments(): void {
+    if (!this.commentActive) {
+      this.publishService.getComments(this.publish.id).then((response) => {
+        this.comments = response;
+        this.commentActive = true;
+      });
+    }
   }
 }

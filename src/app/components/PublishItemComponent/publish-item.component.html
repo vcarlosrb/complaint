@@ -3,7 +3,7 @@
     <a [routerLink]="['/user', publish.user.id]" class="User__photo" style="background-image: url(/assets/images/person.jpg)"></a>
     <div class="User__text">
       <h3><a [routerLink]="['/user', publish.user.id]">{{publish.user.firstName}} {{publish.user.lastName}}</a></h3>
-      <p>{{publish.createdAt | amDateFormat:'MMMM Do YYYY, h:mm:ss a'}}</p>
+      <p>{{publish.createdAt | amDateFormat:'MMMM Do YYYY, h:mm a'}}</p>
     </div>
   </div>
   <div class="Content__statement">
@@ -36,10 +36,11 @@
         <md-icon>thumb_up</md-icon>
         <span>Me gusta</span>
       </li>
-      <li>
+      <li (click)="getComments()">
         <md-icon>comment</md-icon>
         <span>Comentar</span>
       </li>
     </ul>
   </div>
+  <comments-component [user]="user" [comments]="comments" [publish]="publish" *ngIf="comments"></comments-component>
 </div>

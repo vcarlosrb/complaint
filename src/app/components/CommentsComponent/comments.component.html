@@ -1,0 +1,11 @@
+<div class="Comments__wrapper">
+  <div class="Comments__write">
+    <div class="Write__user" style="background-image: url(/assets/images/person.jpg)"></div>
+    <div class="Write__input">
+      <input type="text" placeholder="Escribir un comentario..." #statement (keyup.enter)="onEnter(statement.value)" [(ngModel)]="InputComment">
+    </div>
+  </div>
+  <div class="Comments__list" *ngIf="comments.length > 0">
+    <comment-item-component *ngFor="let comment of comments" [comment]="comment"></comment-item-component>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.Comments__wrapper {
+  border-top: 1px solid #e6e6e6;
+  background-color: #F6F7F9;
+  .Comments__write {
+    padding: 10px;
+    overflow: hidden;
+    .Write__user {
+      float: left;
+      height: 32px;
+      width: 32px;
+      background-position: center;
+      background-size: cover;
+    }
+    .Write__input {
+      margin-left: 40px;
+      input {
+        width: 100%;
+        border: 1px solid rgb(230,230,230);
+        height: 32px;
+        padding: 0 10px;
+        font-family: Open-sans;
+        font-size: 12px;
+        color: rgb(70,70,70);
+      }
+    }
+  }
+  .Comments__list {
+    border-top: 1px solid #e6e6e6;
+    padding: 5px 0;
+  }
+}
